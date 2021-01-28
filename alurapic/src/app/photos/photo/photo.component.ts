@@ -14,7 +14,6 @@ export class PhotoComponent {
     @Input() 
     description = '';
     
-    // atencao : aspas simples!
     @Input() 
     url = '';
 }

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { PhotosModule } from './photos/photos.module';
-
+ import { HttpClientModule } from '@angular/common/http'; // Import do http para requisição de api
 
 @NgModule({
   declarations: [
@@ -13,7 +13,8 @@ import { PhotosModule } from './photos/photos.module';
   imports: [
     // importa os modulos no angular
     BrowserModule,
-    PhotosModule
+    PhotosModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
