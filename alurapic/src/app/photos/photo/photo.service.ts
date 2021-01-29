@@ -1,8 +1,8 @@
 // arquivo de serviço ou seja, é uma classe resposável por requisitar o serviço da api
 
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { PhotoAPI } from "./photo";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { PhotoAPI } from './photo';
 
 const API = 'http://localhost:3000/';
 
@@ -15,7 +15,9 @@ const API = 'http://localhost:3000/';
 @Injectable({ providedIn: 'root' })
 export class PhotoService{
 
-    // 'public' ou 'private' modificador de acesso que pode ser utilizado por toda a classe
+    // 'public' ou 'private' no construtor da classe na propriedade http
+    // faz esta propriedade ser acessada por toda a classe sem ter que criar 
+    // um campo 'http' na classe. Ou seja, é um 'sugar syntax'
     constructor(private http: HttpClient){
 
     }

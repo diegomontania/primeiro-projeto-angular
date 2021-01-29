@@ -1,0 +1,9 @@
+<!-- chama o componente criado. Chamando de forma declarativa, pelo seu 'selector' -->
+<!-- cria uma diretiva '*ngFor', declarando uma variavel 'let photo' para fazer um loop entre os objetos criados 'photos' -->
+<ap-photo 
+
+    *ngFor="let photo of photos" 
+    [url]="photo.url" 
+    [description]="photo.description">
+
+</ap-photo>

@@ -4,16 +4,32 @@
 // Porem, nem todos os componentes em 'declarations' são exportados. Apenas os que estão de fato em 'exports'.
 // Ou seja, pode-se importar N componentes e não necessariamente todos serão exportados.
 
-import { NgModule } from "@angular/core";
-import { PhotoComponent } from "./photo/photo.component";
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { PhotoComponent } from './photo/photo.component';
+import { PhotoListComponent } from './photo-list/photo-list.component';
+import { PhotoFormComponent } from './photo-form/photo-form.component';
 
 // declara componentes deste modulo
 @NgModule({
     // componentes que fazem parte do módulo
-    declarations: [ PhotoComponent ],
+    declarations: [ 
+        PhotoComponent, 
+        PhotoListComponent, 
+        PhotoFormComponent 
+    ],
 
-    // componentes que são exportados por este módulo
-    exports: [ PhotoComponent ]
+    // componentes que são exportados por este módulo caso seja necessario
+    // exports: [ PhotoComponent ],
+
+    // os componentes importados por este modulo
+    imports: [ 
+        HttpClientModule, // Import do http para requisição de api
+        CommonModule // Import para trazer todas as diretivas necessarias para que o angular funcione neste modulo
+    ]
+         
 })
 
 export class PhotosModule {}

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { PhotosModule } from './photos/photos.module';
- import { HttpClientModule } from '@angular/common/http'; // Import do http para requisição de api
+import { AppRougintModule } from './app.routing.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { PhotosModule } from './photos/photos.module';
     // importa os modulos no angular
     BrowserModule,
     PhotosModule,
-    HttpClientModule
+    AppRougintModule
   ],
   providers: [],
   bootstrap: [AppComponent]

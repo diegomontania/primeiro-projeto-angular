@@ -1,12 +1,2 @@
-<!-- quando é para exibir um valor sem atributo, usa-se angular expression -->
-<h1>{{ title }}</h1>
-
-<!-- chama o componente criado. Chamando de forma declarativa, pelo seu 'selector' -->
-<!-- cria uma diretiva '*ngFor', declarando uma variavel 'let photo' para fazer um loop entre os objetos criados 'photos' -->
-<ap-photo 
-
-    *ngFor="let photo of photos" 
-    [url]="photo.url" 
-    [description]="photo.description">
-
-</ap-photo>
+<!-- de acordo com os endereços cadastrados de rotas, exibe os conteudos de cada componente -->
+<router-outlet></router-outlet>
