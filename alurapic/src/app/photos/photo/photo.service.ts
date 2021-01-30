@@ -2,7 +2,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { PhotoAPI } from './photo';
+import { PhotoAPI } from './PhotoAPI';
 
 const API = 'http://localhost:3000/';
 

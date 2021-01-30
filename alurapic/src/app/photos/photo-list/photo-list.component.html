@@ -1,9 +1,24 @@
-<!-- chama o componente criado. Chamando de forma declarativa, pelo seu 'selector' -->
-<!-- cria uma diretiva '*ngFor', declarando uma variavel 'let photo' para fazer um loop entre os objetos criados 'photos' -->
-<ap-photo 
+<!-- tipos de bindings -->
+<!-- Data binding, [] : o dado que vem do componente para o template -->
+<!-- Event binding, () : o dado vem do template para o componente -->
 
-    *ngFor="let photo of photos" 
-    [url]="photo.url" 
-    [description]="photo.description">
+<!-- keyup a cada digito feito pegará o valor do input e jogando na propriedade 'filtroDeFotos' de 'photo-list.component' -->
+<!-- fazendo um 'event binding' entre parenteses -->
+<div class="text-center mt-3 mb-3">
+    <form>
+        <!-- caixa de pesquisa -->
+        <input
+            class="rounded"
+            type="search"
+            placeholder="Pesquise por uma foto..."
+            autofocus
+            (keyup) = "filtroDeFotos = $event.target.value"
+            >
+    </form>
+</div>
 
-</ap-photo>
+<!-- faz a propriedade de InBounded [photos] de photo-list.component' receber as fotos vindas da api -->
+
+<!-- cria um pipe = |, personalizado para que o filtro possa ser aplicado, passando o critério que é o 'filter' -->
+<!-- 'filterByDescription' é o nome filtro criado -->
+<ap-photos [photos]="minhasPhotosVindasDaAPI | filterByDescription: filtroDeFotos"></ap-photos>

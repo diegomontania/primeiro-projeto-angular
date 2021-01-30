@@ -11,6 +11,8 @@ export class PhotoComponent {
 
     // define as propriedades (dados) deste componente
     // @Input() : é uma propriedade 'Inbound' que recebe valores externos
+    // no caso, ao definir essas propriedades quem utilizar este componente, deverá passar 
+    // as mesmas como parametro
     @Input() 
     description = '';
     

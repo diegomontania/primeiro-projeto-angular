@@ -1,0 +1,51 @@
+<!-- chama o componente criado. Chamando de forma declarativa, pelo seu 'selector' (ap-photo) -->
+<!-- cria uma diretiva '*ngFor', declarando uma variavel 'let photo' para fazer um loop entre os objetos criados 'photos' -->
+
+<!-- 
+    1º. O item da lista (li) tem a diretiva ngFor que itera o array
+
+    2º. Em cada iteração neste array é chamado o componente PhotoComponent 
+    através do seletor ap-photo e suas Inbound Properties "description" e "url" 
+    são preenchidas via  databinding (colchetes []).
+ 
+    3º. Cria um array onde cada item deste array, será outro array.
+    Onde cada elemento será de no máximo 3 posições
+
+exemplo :
+
+primeiro array
+[
+    segundo array
+    [1, 2,  3,],
+    [1, 2,  3,],
+    [1, 2,  3,],
+]
+-->
+
+<!-- utilizando diretiva *ngIf, se não existir fotos com filtradas exibe-->
+<p class="text-center text-muted" *ngIf="!photos.length">
+    Desculpe, não existem fotos com a pesquisa aplicada
+</p>
+
+
+<!-- lista -->
+<ol class="list-unstyled">
+
+    <!-- primeiro array contendo colunas de linhas -->
+    <!-- ou seja, recebendo as fotos da propriedade 'rows' de 'photos.component' -->
+    <li *ngFor="let cols of rows" class="row">
+
+        <!-- segundo array contendo as fotos nas colunas-->
+        <div *ngFor="let photo of cols" class="col-4">
+            
+            <!-- conteudo da coluna, ou seja a foto -->
+            <ap-photo 
+                [url]="photo.url" 
+                [description]="photo.description">
+            </ap-photo>
+
+        </div>
+
+    </li>
+
+</ol>

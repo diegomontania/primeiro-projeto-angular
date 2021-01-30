@@ -3,13 +3,18 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from '@angular/router'
 
+
 import { PhotoFormComponent } from "./photos/photo-form/photo-form.component";
 import { PhotoListComponent } from "./photos/photo-list/photo-list.component";
+import { NotFoundComponent } from "./errors/not-found/not-found.component";
 
 // responsavel por fazer o de x para de rotas
 const routes: Routes = [
-    { path : 'user/flavio', component: PhotoListComponent},
-    { path : 'p/add', component: PhotoFormComponent}
+    // 'meuUsuario' : é um valor dinamico que é modificado para cada nova rota da url
+    // o segmento da rota atual, ou seja, URL/user/:xxxx
+    { path : 'user/:meuUsuario', component: PhotoListComponent}, 
+    { path : 'p/add', component: PhotoFormComponent},
+    { path : '**', component: NotFoundComponent}
 ];
 
 @NgModule({
