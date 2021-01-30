@@ -2,6 +2,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+
+// meus imports
 import { PhotosModule } from './photos/photos.module';
 import { AppRougintModule } from './app.routing.module';
 
@@ -16,7 +18,11 @@ import { AppRougintModule } from './app.routing.module';
     PhotosModule,
     AppRougintModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
