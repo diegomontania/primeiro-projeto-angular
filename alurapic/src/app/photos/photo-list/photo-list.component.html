@@ -2,7 +2,7 @@
 <!-- Data binding, [] : o dado que vem do componente para o template -->
 <!-- Event binding, () : o dado vem do template para o componente -->
 
-<!-- keyup a cada digito feito pegará o valor do input e jogando na propriedade 'filtroDeFotos' de 'photo-list.component' -->
+<!-- 'debounce.next' aguarda o usuario terminar de digitar e pegará o valor do input e jogando na propriedade 'filtroDeFotos' de 'photo-list.component' -->
 <!-- fazendo um 'event binding' entre parenteses -->
 <div class="text-center mt-3 mb-3">
     <form>
@@ -12,7 +12,7 @@
             type="search"
             placeholder="Pesquise por uma foto..."
             autofocus
-            (keyup) = "filtroDeFotos = $event.target.value"
+            (keyup) = "debounce.next($event.target.value)"
             >
     </form>
 </div>
@@ -22,3 +22,9 @@
 <!-- cria um pipe = |, personalizado para que o filtro possa ser aplicado, passando o critério que é o 'filter' -->
 <!-- 'filterByDescription' é o nome filtro criado -->
 <ap-photos [photos]="minhasPhotosVindasDaAPI | filterByDescription: filtroDeFotos"></ap-photos>
+
+<!-- botão de carregamento de mais imagens -->
+<!-- fazendo associação da propriedade 'temMaisImagensParaExibir', do botão load-button.component.ts -->
+<!-- utilizando um data-binding da propriedade 'temMaisImagensParaExibir', da photo-list.component.ts -->
+<!-- chama o metodo 'carregarMaisImagens' do photo-list.component-->
+<ap-load-button (click)="carregarMaisImagens()" [temMaisImagensParaExibir]="temMaisImagensParaExibir"></ap-load-button>

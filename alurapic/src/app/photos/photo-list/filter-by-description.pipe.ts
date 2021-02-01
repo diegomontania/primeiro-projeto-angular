@@ -24,7 +24,6 @@ export class FilterByDescription implements PipeTransform{
             // se não houver descricao, devolve lista sem filtro
             return photos;
         }
-
     }
 
 }

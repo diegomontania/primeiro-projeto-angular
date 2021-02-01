@@ -1,0 +1,12 @@
+<!-- fazendo if e else nas tags html -->
+
+<div class="text-center" *ngIf="temMaisImagensParaExibir; else exibeMensagemSemDados">
+  <button class="btn btn-primary">Carregar mais fotos</button>
+</div>
+
+<!-- 'variavel de template' : #XXX, para fazer if e else de template -->
+<ng-template #exibeMensagemSemDados>
+  <p class="text-center text-muted">No more data to load</p>
+</ng-template>
+
+

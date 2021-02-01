@@ -1,6 +1,6 @@
 // arquivo de serviço ou seja, é uma classe resposável por requisitar o serviço da api
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PhotoAPI } from './PhotoAPI';
 
@@ -23,8 +23,14 @@ export class PhotoService{
     }
 
     listFromUser(userName: string){
-
         // trás o objeto da resposta como um array de objetos
         return this.http.get<PhotoAPI[]>(API + userName +'/photos'); 
+    }
+
+    listFromUserPaginated(userName: string, pagina: number){
+
+        const parametros = new HttpParams().append('pagina', pagina.toString());
+
+        return this.http.get<PhotoAPI[]>(API + userName +'/photos', { params: parametros}); 
     }
 }
