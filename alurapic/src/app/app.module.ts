@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { PhotosModule } from './photos/photos.module';
 import { AppRougintModule } from './app.routing.module';
 import { ErrorsModule } from './errors/errors.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ErrorsModule } from './errors/errors.module';
     BrowserModule,
     PhotosModule,
     AppRougintModule,
-    ErrorsModule
+    ErrorsModule,
+    HomeModule,
   ],
   providers: [
 
