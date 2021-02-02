@@ -30,7 +30,6 @@ export class PhotoService{
     listFromUserPaginated(userName: string, pagina: number){
 
         const parametros = new HttpParams().append('pagina', pagina.toString());
-
         return this.http.get<PhotoAPI[]>(API + userName +'/photos', { params: parametros}); 
     }
 }

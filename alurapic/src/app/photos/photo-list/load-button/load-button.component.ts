@@ -11,9 +11,8 @@ export class LoadButtonComponent implements OnInit {
   // @Input para receber essa informação externamente
   @Input() temMaisImagensParaExibir: boolean = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

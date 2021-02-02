@@ -25,14 +25,10 @@ export class PhotosComponent implements OnChanges {
       // recebe a quantidade de grupos que serão criados a partir das fotos
       // recebidas do back-end, ou seja, colocando as fotos nas colunas
       this.rows = this.agruparColunasDeFotos(this.photos);
-
     }
   }
 
-  ngOnInit() {
-
-    
-  }
+  ngOnInit() {}
 
   agruparColunasDeFotos(photos: PhotoAPI[]) {
     

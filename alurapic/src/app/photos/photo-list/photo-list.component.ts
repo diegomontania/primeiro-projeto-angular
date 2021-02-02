@@ -7,7 +7,7 @@ import { PhotoService } from '../photo/photo.service';
 import { PhotoAPI } from '../photo/PhotoAPI';
 
 @Component({
-  selector: 'app-photo-list',
+  selector: 'ap-photo-list',
   templateUrl: './photo-list.component.html',
   styleUrls: ['./photo-list.component.css']
 })
@@ -68,7 +68,6 @@ export class PhotoListComponent implements OnInit, OnDestroy {
 
   // onDestroy ocorre após mudança de página destruindo um serviço
   ngOnDestroy(): void {
-
     // removendo unsuscribe do componente que faz uso do debounce
     this.debounce.unsubscribe();
   }
@@ -81,9 +80,7 @@ export class PhotoListComponent implements OnInit, OnDestroy {
       this.minhasPhotosVindasDaAPI = this.minhasPhotosVindasDaAPI.concat(photos);
 
       // se nao houver mais fotos
-      if(!photos.length){
-        this.temMaisImagensParaExibir = false;
-      }
+      if(!photos.length) this.temMaisImagensParaExibir = false;
     });
   }
 }
