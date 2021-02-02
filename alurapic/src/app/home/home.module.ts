@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 
 // importa os componentes para este modulo
 import { HomeComponent } from './home.component';
-import { ButtonLoadPageComponent } from '../button-load-page/button-load-page.component'
+import { ButtonLoadPageComponent } from './button-load-page/button-load-page.component'
 
 // declara componentes deste modulo
 @NgModule({
-
     //componentes que fazem parte do modulo
     declarations: [
         HomeComponent,

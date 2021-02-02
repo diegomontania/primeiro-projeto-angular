@@ -34,8 +34,7 @@ import { LoadButtonComponent } from './photo-list/load-button/load-button.compon
     imports: [ 
         HttpClientModule, // Import do http para requisição de api
         CommonModule // Import para trazer todas as diretivas necessarias para que o angular funcione neste modulo
-    ]
-         
+    ]       
 })
 
 export class PhotosModule {}

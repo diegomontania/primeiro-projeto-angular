@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit{
     ngOnInit(): void {}
 
     // metodo chamado no template
-    proximaPagina(): void{
-        this.router.navigate(['user/flavio']);
+    proximaPagina(inputDoUsuario: string): void{
+        this.router.navigate(['user/' + inputDoUsuario]);
     }
 }

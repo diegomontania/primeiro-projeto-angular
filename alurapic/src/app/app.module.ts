@@ -23,7 +23,7 @@ import { HomeModule } from './home/home.module';
     PhotosModule,
     AppRougintModule,
     ErrorsModule,
-    HomeModule,
+    HomeModule
   ],
   providers: [
 
