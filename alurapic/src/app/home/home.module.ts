@@ -3,27 +3,28 @@ import { CommonModule } from '@angular/common';
 
 // importa os componentes para este modulo
 import { HomeComponent } from './home.component';
-import { ButtonLoadPageComponent } from './button-load-page/button-load-page.component'
+import { FormHomeComponent } from './form-home/form-home.component'
+import { ReactiveFormsModule } from "@angular/forms";
 
 // declara componentes deste modulo
 @NgModule({
     //componentes que fazem parte do modulo
     declarations: [
         HomeComponent,
-        ButtonLoadPageComponent
+        FormHomeComponent
     ],
 
     //exportando componentes que fazem parte do modulo, para que fique visivel no resto da aplicação
     exports:[
         HomeComponent,
-        ButtonLoadPageComponent
+        FormHomeComponent
     ],
 
     // os componentes importados por este modulo
     imports: [ 
-        CommonModule // Import para trazer todas as diretivas necessarias para que o angular funcione neste modulo
+        CommonModule, // Import para trazer todas as diretivas necessarias para que o angular funcione neste modulo
+        ReactiveFormsModule //Import do modulo de forms do angular
     ]
-
 })
 
 export class HomeModule{}

@@ -1,0 +1,41 @@
+<div class="container">
+    <h3>Insira o usuário no qual deseja visualizar a galeria</h3>
+
+    <!-- cria formulario -->
+    <form [formGroup]="meuFormularioReativo" novalidate>
+
+      <!-- cria label de nome para este formulario -->
+      <div class="form-group">
+        <label >Usuario</label>
+            <input class="form-control" formControlName="nome" type="text">
+      </div>
+      <!-- Sua mensagem de validação -->
+      <div *ngIf="meuFormularioReativo.controls['nome'].invalid && (meuFormularioReativo.controls['nome'].dirty || meuFormularioReativo.controls['nome'].touched)" class="alert alert-danger">
+        <div *ngIf="meuFormularioReativo.controls['nome'].errors.required">
+          Nome é obrigatório
+        </div>
+      </div>
+      
+      <!-- label idade -->
+      <div class="form-group">
+            <label>Idade</label>
+            <input class="form-control" formControlName="idade" type="text">
+      </div>
+      <div *ngIf="meuFormularioReativo.controls['idade'].invalid && (meuFormularioReativo.controls['idade'].dirty || meuFormularioReativo.controls['idade'].touched)" class="alert alert-danger">
+          <div *ngIf="meuFormularioReativo.controls['idade'].errors.required">
+            Idade é obrigatória
+          </div>
+      </div>
+        
+      <!-- mais labels aqui... -->
+      
+      <!-- botão, chama uma funcao que está no componente deste html (form-home.componente.ts)-->
+      <button type="submit" 
+              [disabled]="meuFormularioReativo.pristine || meuFormularioReativo.invalid"
+              class="btn btn-primary" 
+              (click)="proximaPagina(meuFormularioReativo.controls['nome'].value)">Carregar</button>
+    </form>
+    <br />
+    <!-- <p>Form value: {{ meuFormularioReativo.value | json }}</p>
+    <p>Form status: {{ meuFormularioReativo.status | json }}</p> -->
+</div>

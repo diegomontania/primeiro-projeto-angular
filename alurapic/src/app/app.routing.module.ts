@@ -19,6 +19,7 @@ const routes: Routes = [
     { path : 'user/:meuUsuario', component: PhotoListComponent, resolve: { carregarFotos: PhotoListResolver } }, 
     { path : 'p/add', component: PhotoFormComponent},
     { path : '**', component: NotFoundComponent}
+    { path : '404', component: NotFoundComponent}
 ];
 
 @NgModule({

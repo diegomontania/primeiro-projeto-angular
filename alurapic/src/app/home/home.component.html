@@ -2,15 +2,9 @@
 
     <h2>{{title}}</h2>
 
-    <!-- # : declara a variavel que irá armazenar o valor digitado pelo usuário-->
-    <label>Usuário 
-        <input name="inputUsuario" #meuValor placeholder="digite um usuario">
-    </label>
-
-    <!-- exibe o botão na página, pelo seu seletor -->
-    <!-- e também chama uma funcao que está no componente deste html (home.componente.ts) -->
-    <ap-button-load-page (click)="proximaPagina(meuValor.value)"></ap-button-load-page>
-
 </div>
+
+<!-- importa form para fazer validação do campo -->
+<ap-form-home></ap-form-home>
 
 
