@@ -18,7 +18,7 @@ const routes: Routes = [
     // o segmento da rota atual, ou seja, URL/user/:xxxx
     { path : 'user/:meuUsuario', component: PhotoListComponent, resolve: { carregarFotos: PhotoListResolver } }, 
     { path : 'p/add', component: PhotoFormComponent},
-    { path : '**', component: NotFoundComponent}
+    { path : '**', component: NotFoundComponent},
     { path : '404', component: NotFoundComponent}
 ];
 

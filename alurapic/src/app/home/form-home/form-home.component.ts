@@ -42,6 +42,6 @@ export class FormHomeComponent implements OnInit {
       if (event instanceof NavigationError) {
         this.router.navigate(['404']);
       }
-    }
+    });
   }
 }

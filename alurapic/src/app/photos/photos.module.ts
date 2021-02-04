@@ -14,6 +14,7 @@ import { PhotoFormComponent } from './photo-form/photo-form.component';
 import { PhotosComponent } from './photo-list/photos/photos.component'
 import { FilterByDescription } from './photo-list/filter-by-description.pipe';
 import { LoadButtonComponent } from './photo-list/load-button/load-button.component';
+import { CardModule } from '../shared/components/card/card.module';
 
 // declara componentes deste modulo
 @NgModule({
@@ -30,10 +31,11 @@ import { LoadButtonComponent } from './photo-list/load-button/load-button.compon
     // componentes que são exportados por este módulo caso seja necessario
     // exports: [ PhotoComponent ],
 
-    // os componentes importados por este modulo
+    // os modulos importados por este modulo
     imports: [ 
         HttpClientModule, // Import do http para requisição de api
-        CommonModule // Import para trazer todas as diretivas necessarias para que o angular funcione neste modulo
+        CommonModule, // Import para trazer todas as diretivas necessarias para que o angular funcione neste modulo
+        CardModule
     ]       
 })
 
