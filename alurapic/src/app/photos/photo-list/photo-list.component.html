@@ -2,25 +2,17 @@
 <!-- Data binding, [] : o dado que vem do componente para o template -->
 <!-- Event binding, () : o dado vem do template para o componente -->
 
-<!-- 'debounce.next' aguarda o usuario terminar de digitar e pegará o valor do input e jogando na propriedade 'filtroDeFotos' de 'photo-list.component' -->
-<!-- fazendo um 'event binding' entre parenteses -->
-<div class="text-center mt-3 mb-3">
-    <form>
-        <!-- usando font awesome (icone de lupa)-->
-        <i aria-hidden=true class="fa fa-search mr-1"></i>
-        <!-- caixa de pesquisa -->
-        <input
-            class="rounded"
-            type="search"
-            placeholder="Pesquise por uma foto..."
-            autofocus
-            (keyup) = "debounce.next($event.target.value)"
-            >
-    </form>
-</div>
+<!-- chama o component de busca -->
+<!-- criando um evento personalizado para ser disparado (meuEvento)-->
+<!-- $event : é um evento que irá captar o que foi digitado pelo usuário -->
+<!-- ou seja, o filtro de fotos irá receber a partir do evento o que foi digitado -->
+<!-- faz um 'data binding' de uma propriedade chamada 'textoBusca' vazia, 
+    para limpar a caixa de texto quando o botão de "carregar mais fotos" for pressionado-->
+<ap-search 
+     (meuEventoQueSeraDisparado) ="filtroDeFotos = $event" [textoBusca]="filtroDeFotos">
+</ap-search>
 
 <!-- faz a propriedade de InBounded [photos] de photo-list.component' receber as fotos vindas da api -->
-
 <!-- cria um pipe = |, personalizado para que o filtro possa ser aplicado, passando o critério que é o 'filter' -->
 <!-- 'filterByDescription' é o nome filtro criado -->
 <ap-photos [photos]="minhasPhotosVindasDaAPI | filterByDescription: filtroDeFotos"></ap-photos>

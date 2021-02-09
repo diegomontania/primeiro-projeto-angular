@@ -1,0 +1,23 @@
+<!-- tipos de bindings -->
+<!-- Data binding, [] : o dado que vem do componente para o template -->
+<!-- Event binding, () : o dado vem do template para o componente -->
+
+<!-- 'debounce.next' aguarda o usuario terminar de digitar e pegará o valor do input e jogando na propriedade 'filtroDeFotos' de 'photo-list.component' -->
+<!-- fazendo um 'event binding' entre parenteses -->
+<div class="text-center mt-3 mb-3">
+    <form>
+        <!-- usando font awesome (icone de lupa)-->
+        <i aria-hidden=true class="fa fa-search mr-1"></i>
+        
+        <!-- caixa de pesquisa -->
+        <!-- [value] : recebe uma string vazia para limpar caixa de texto ao clicar no botão "carregar mais imagens" -->
+        <input
+            class="rounded"
+            type="search"
+            placeholder="Pesquise por uma foto..."
+            autofocus
+            (keyup) = "debounce.next($event.target.value)"
+            [value] = "textoBusca"
+            >
+    </form>
+</div>

@@ -35,7 +35,8 @@ primeiro array
     <li *ngFor="let cols of rows" class="row no-gutters">
 
         <!-- segundo array contendo as fotos nas colunas-->
-        <div *ngFor="let photo of cols" class="col-4">
+        <!-- utilizando diretiva personalizada 'apDarkenOnHover' como um atributo deste componente -->
+        <div *ngFor="let photo of cols" class="col-4" apDarkenOnHouver>
             
             <!-- utilizando um card -->
             <ap-card [tituloDoCard]="photo.description">
@@ -53,8 +54,6 @@ primeiro array
                 </div>
 
             </ap-card>
-
-
 
         </div>
 
