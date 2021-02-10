@@ -6,7 +6,7 @@
 
       <!-- cria label de nome para este formulario -->
       <div class="form-group">
-        <label >Usuario</label>
+        <label >Nome</label>
             <input class="form-control" formControlName="nome" type="text">
       </div>
       <!-- Sua mensagem de validação -->
@@ -18,12 +18,12 @@
       
       <!-- label idade -->
       <div class="form-group">
-            <label>Idade</label>
-            <input class="form-control" formControlName="idade" type="text">
+            <label>Sobrenome</label>
+            <input class="form-control" formControlName="sobrenome" type="text">
       </div>
-      <div *ngIf="meuFormularioReativo.controls['idade'].invalid && (meuFormularioReativo.controls['idade'].dirty || meuFormularioReativo.controls['idade'].touched)" class="alert alert-danger">
-          <div *ngIf="meuFormularioReativo.controls['idade'].errors.required">
-            Idade é obrigatória
+      <div *ngIf="meuFormularioReativo.controls['sobrenome'].invalid && (meuFormularioReativo.controls['sobrenome'].dirty || meuFormularioReativo.controls['sobrenome'].touched)" class="alert alert-danger">
+          <div *ngIf="meuFormularioReativo.controls['sobrenome'].errors.required">
+            Sobrenome é obrigatório
           </div>
       </div>
         

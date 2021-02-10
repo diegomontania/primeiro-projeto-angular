@@ -12,6 +12,7 @@ export class FormHomeComponent implements OnInit {
   // verifica se a informação foi enviada do html para o component
   submitted: boolean = false;
 
+  // propriedade responsável pelo formulário
   meuFormularioReativo: FormGroup;
 
   // recebe no construtor os objetos:
@@ -27,7 +28,7 @@ export class FormHomeComponent implements OnInit {
   criaFormulario() {
     this.meuFormularioReativo = this.formBuilder.group({
       nome: ['', Validators.required],
-      idade: ['', Validators.required]
+      sobrenome: ['', Validators.required]
     });
   }
 

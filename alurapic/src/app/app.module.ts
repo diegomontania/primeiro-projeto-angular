@@ -13,6 +13,7 @@ import { AppRougintModule } from './app.routing.module';
 import { ErrorsModule } from './errors/errors.module';
 import { HomeModule } from './home/home.module';
 
+
 @NgModule({
   declarations: [
     // importa seus componentes
