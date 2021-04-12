@@ -11,7 +11,7 @@ Run `ng serve --open` for a dev server. Navigate to `http://localhost:4200/`. Th
 
 Run `npm start` for api dev server.
 
-## Debbuing application
+## Debuging application
 
 Go in 'debugging icon' (utilizing vscode), and run `ng serve`
 
